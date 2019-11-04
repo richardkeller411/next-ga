@@ -5,6 +5,7 @@ const IS_BROWSER = typeof window !== "undefined";
 export function init(code) {
   if (IS_BROWSER && !window.GA_INITIALIZED && code) {
     ReactGA.initialize(code);
+    ReactGA.plugin.require("ec");
   }
 }
 
@@ -16,6 +17,12 @@ export function pageview() {
 export function event(category = "", action = "") {
   if (category && action) {
     ReactGA.event({ category, action });
+  }
+}
+
+export function ecommerceEvent(category = "", action = "") {
+  if (category && action) {
+    ReactGA.plugin.execute("ec", "setAction", category, action);
   }
 }
 

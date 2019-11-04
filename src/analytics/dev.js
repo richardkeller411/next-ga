@@ -11,15 +11,15 @@ export function pageview() {
 }
 
 export function event(category = "", action = "") {
-  log(
-    `Event for category ${category} and action ${action} triggered`
-  );
+  log(`Event for category ${category} and action ${action} triggered`);
 }
 
 export function exception(description = "", fatal = false) {
   log(
-    `${
-      fatal ? "Fatal exception" : "Exception"
-    } with description ${description}`
+    `${fatal ? "Fatal exception" : "Exception"} with description ${description}`
   );
+}
+
+export function ecommerceEvent(category = "", action = "") {
+  log(`Event for category ${category} and action ${action} triggered`);
 }
