@@ -28,7 +28,7 @@ export function ecommerceEvent(category = "", action = "") {
 }
 
 export function ecommerceAddProduct(product, send = false) {
-  if (category && action) {
+  if (product) {
     ReactGA.plugin.execute("ec", "addProduct", product);
     if (send == true) {
       ReactGA.plugin.execute("ec", "send");
