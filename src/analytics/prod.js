@@ -23,7 +23,12 @@ export function event(category = "", action = "") {
 export function ecommerceEvent(category = "", action = "") {
   if (category && action) {
     ReactGA.plugin.execute("ec", "setAction", category, action);
+    ReactGA.plugin.execute("ec", "send");
   }
+}
+
+export function ecommerceClear() {
+  ReactGA.plugin.execute("ec", "clear");
 }
 
 export function exception(description = "", fatal = false) {
