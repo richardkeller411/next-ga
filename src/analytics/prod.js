@@ -27,6 +27,13 @@ export function ecommerceEvent(category = "", action = "") {
   }
 }
 
+export function ecommerceAddProduct(product) {
+  if (category && action) {
+    ReactGA.plugin.execute("ec", "addProduct", product);
+    ReactGA.plugin.execute("ec", "send");
+  }
+}
+
 export function ecommerceClear() {
   ReactGA.plugin.execute("ec", "clear");
 }
