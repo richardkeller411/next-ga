@@ -14,15 +14,15 @@ export function pageview() {
   ReactGA.pageview(window.location.pathname);
 }
 
-export function event(category = "", action = "") {
+export function event(category = "", action = "", label = "") {
   if (category && action) {
-    ReactGA.event({ category, action });
+    ReactGA.event({ category, action, label });
   }
 }
 
-export function ecommerceEvent(category = "", action = "") {
+export function ecommerceEvent(category = "", action = "", label = "") {
   if (category && action) {
-    ReactGA.plugin.execute("ec", "setAction", category, action);
+    ReactGA.plugin.execute("ec", "setAction", category, action, label);
     ReactGA.plugin.execute("ec", "send");
   }
 }
