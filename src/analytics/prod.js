@@ -16,6 +16,7 @@ export function pageview() {
 
 export function event(category = "", action = "", label = "") {
   if (category && action) {
+    console.log("Event Sent");
     ReactGA.event({ category, action, label });
   }
 }
